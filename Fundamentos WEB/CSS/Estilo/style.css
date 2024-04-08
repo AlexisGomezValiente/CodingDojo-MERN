@@ -1,0 +1,32 @@
+* {
+  font-family: "Acme", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+span {
+  color: rgb(170, 170, 255);
+}
+
+h2 {
+  font-style: italic;
+  text-align: center;
+  background-color: blueviolet;
+  padding: 10px;
+  color: white;
+}
+
+h3 {
+  background-color: rgb(56, 248, 255);
+  padding: 10px;
+  font-size: 20px;
+  color: blueviolet;
+  text-decoration: underline;
+  text-align: right;
+}

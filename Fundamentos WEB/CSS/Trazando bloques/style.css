@@ -1,0 +1,46 @@
+#padre{
+    width: 1000px;
+    height: 90vh;
+    background-color: rgb(186, 186, 186);
+    padding: 15px;
+}
+
+#green{
+    width: 100%;
+    height: 110px;
+    background-color: green;
+}
+
+#blue{
+    width: 200px;
+    height: 300px;
+    background-color: blue;
+    margin-top: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#red{
+    width: 750px;
+    height: 400px;
+    background-color: red;
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 15px;
+}
+
+.yellow{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#violet{
+    width: 638px;
+    height: 80px;
+    background-color: blueviolet; 
+    margin-top: 20px;
+}
