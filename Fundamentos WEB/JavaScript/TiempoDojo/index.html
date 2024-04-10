@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiempoDojo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav id="nav">
+        <h1>DojoWeather</h1>
+        <ul id="lugares">
+          <li class="lugar">Burbank</li>
+          <li class="lugar">Chicago</li>
+          <li class="lugar">Dallas</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div id="padre">
+        <div id="arriba">
+          <h2>San Jose</h2>
+          <div id="tipoTemperatura">
+            <p>Show temperature in:</p>
+            <select name="" id="opcionTemperatura" onchange="cambioTemp()">
+              <option value="C">°C</option>
+              <option value="F">°F</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="temperaturas">
+          <div class="temperaturaHijo">
+            <h3>Today</h3>
+            <img src="img/some_clouds.png" alt="Nublado" />
+            <p>Some Clouds</p>
+            <div class="descripcion">
+              <p class="pMin"><span class="min">27</span>°</p>
+              <p class="pMax"><span class="max">35</span>°</p>
+            </div>
+          </div>
+          <div class="temperaturaHijo">
+            <h3>Tomorrow</h3>
+            <img src="img/some_rain.png" alt="Tormenta" />
+            <p>Some Rain</p>
+            <div class="descripcion">
+              <p class="pMin"><span class="min">23</span>°</p>
+              <p class="pMax"><span class="max">32</span>°</p>
+            </div>
+          </div>
+          <div class="temperaturaHijo">
+            <h3>Friday</h3>
+            <img src="img/some_sun.png" alt="Soleado" />
+            <p>Some Sun</p>
+            <div class="descripcion">
+              <p class="pMin"><span class="min">29</span>°</p>
+              <p class="pMax"><span class="max">33</span>°</p>
+            </div>
+          </div>
+          <div class="temperaturaHijo">
+            <h3>Saturday</h3>
+            <img src="img/some_clouds.png" alt="Nublado" />
+            <p>Some Clouds</p>
+            <div class="descripcion">
+              <p class="pMin"><span class="min">25</span>°</p>
+              <p class="pMax"><span class="max">30</span>°</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="cookie">
+          <img src="img/cookie.png" alt="Cookie" />
+          <div id="desc">
+            <h3>Stop! Cookie time</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+              laudantium sint error atque doloremque totam ea nesciunt
+              reiciendis, earum dicta odio cum officia, sequi neque omnis
+              veritatis alias quisquam obcaecati.
+            </p>
+          </div>
+          <button id="cookieBtn">I Accept</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

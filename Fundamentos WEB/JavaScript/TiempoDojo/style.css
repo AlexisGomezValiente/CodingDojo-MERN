@@ -1,0 +1,169 @@
+* {
+  font-family: "Acme", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+#nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: rgb(57, 173, 227);
+}
+
+#nav h1{
+    font-size: 45px;
+    color: white;
+}
+
+#lugares{
+    display: flex;
+    list-style-type: none;
+    width: 500px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lugar{
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#padre{
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#arriba{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    border-bottom: 3px solid black;
+}
+
+#arriba h2{
+    font-size: 35px;
+    padding: 15px;
+}
+
+#tipoTemperatura{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#tipoTemperatura p{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+#opcionTemperatura{
+    border: 2px solid black;
+    font-size: 20px;
+    background-color: rgb(57, 173, 227);
+    color: white;
+}
+
+#temperaturas{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.temperaturaHijo{
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(212, 212, 212);
+    margin: 15px;
+}
+
+.temperaturaHijo h3{
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.temperaturaHijo img{
+    border-radius: 50%;
+    width: 120px;
+}
+
+.temperaturaHijo p{
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.descripcion{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.descripcion p{
+    margin: 0;
+    font-size: 25px;
+}
+
+.pMin{
+    color: blue
+}
+
+.pMax{
+    color: red
+}
+
+#cookie{
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(237, 237, 237);
+    position: fixed;
+    width: 800px;
+}
+
+#cookie img{
+    padding: 10px;
+}
+
+#desc{
+    padding: 10px;
+}
+
+#desc p{
+    text-align: justify;
+}
+
+#cookieBtn{
+    width: 230px;
+    border: 2px solid black;
+    background-color: rgb(57, 173, 227);
+    color: white;
+    box-shadow: 3px 3px black;
+    font-size: 20px;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
