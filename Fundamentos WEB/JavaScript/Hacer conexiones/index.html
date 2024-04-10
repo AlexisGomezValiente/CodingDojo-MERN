@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina de perfil</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav">
+      <h1 class="nav-title">Perfil</h1>
+      <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#" class="active">My Profile</a></li>
+        <li><a href="#">Encontrar conexiones</a></li>
+        <li><button class="btn">Cerrar sesión</button></li>
+      </ul>
+    </nav>
+    <div id="padre">
+      <main id="container">
+        <div>
+          <div id="top"></div>
+          <img src="./icons/user-circle.png" alt="User" id="user" />
+          <div id="info">
+            <h1 id="name">Alexis Gomez</h1>
+            <h2 id="map">
+              <span
+                ><img
+                  src="./icons/map-marker.png"
+                  alt="Map"
+                  id="mapImg" /></span
+              >Paraguay
+            </h2>
+            <p class="detalle">Developer | Ingeniero | Informatico</p>
+            <p class="detalle">Experto en Desarrollo Web FullStack</p>
+            <a href="#" id="profile"
+              ><span><img src="./icons/gear.png" alt="Gear" /></span> Edit
+              Profile</a
+            >
+          </div>
+        </div>
+
+        <div id="education">
+          <h2>Education</h2>
+          <ul>
+            <li>
+              <p class="institucion">CodingDojo - FullStack Development</p>
+              <p class="fecha">Abril 2024 - Julio 2024</p>
+            </li>
+            <li>
+              <p class="institucion">SoyHenry - FullStack Development</p>
+              <p class="fecha">Mayo 2023 - December 2023</p>
+            </li>
+            <li>
+              <p class="institucion">UNIGRAN - Ingenieria en Informatica</p>
+              <p class="fecha">Febrero 2022 - December 2026</p>
+            </li>
+          </ul>
+        </div>
+      </main>
+      <aside id="aside">
+        <div class="divAside">
+          <h2><span id="numReq">2</span>Conecction Requests</h2>
+          <ul>
+            <li>
+              <div class="request1">
+                <img src="./icons/user-circle.png" alt="User" />
+                Todd E
+              </div>
+              <div class="request2">
+                <button class="accept"><img src="./icons/accept-circle.png" alt="Accept" /></button>
+                <button class="close"><img src="./icons/close-circle.png" alt="Close" /></button>
+              </div>
+            </li>
+            <li>
+              <div class="request1">
+                <img src="./icons/user-circle.png" alt="User" />
+                Alexis G
+              </div>
+              <div class="request2">
+                <button class="accept"><img src="./icons/accept-circle.png" alt="Accept" /></button>
+                <button class="close"><img src="./icons/close-circle.png" alt="Close" /></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="divAside">
+          <h2><span id="numCon">500+</span>Your Connections</h2>
+          <ul>
+            <li>
+              <div class="request1">
+                <img src="./icons/user-circle.png" alt="User" />
+                Adrian O
+              </div>
+            </li>
+            <li>
+              <div class="request1">
+                <img src="./icons/user-circle.png" alt="User" />
+                Luz N
+              </div>
+            </li>
+            <li>
+              <div class="request1">
+                <img src="./icons/user-circle.png" alt="User" />
+                Hugo N
+              </div>
+            </li>
+            <li>
+              <div class="request1">
+                <img src="./icons/user-circle.png" alt="User" />
+                Julio B
+              </div>
+            </li>
+          </ul>
+          <a href="#" id="linkMore">View More</a>
+        </div>
+      </aside>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
