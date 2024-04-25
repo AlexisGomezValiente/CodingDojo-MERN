@@ -35,7 +35,8 @@
                   src="./icons/map-marker.png"
                   alt="Map"
                   id="mapImg" /></span
-              >Paraguay
+              >
+              <span id="city">Paraguay</span>
             </h2>
             <p class="detalle">Developer | Ingeniero | Informatico</p>
             <p class="detalle">Experto en Desarrollo Web FullStack</p>
@@ -74,8 +75,12 @@
                 Todd E
               </div>
               <div class="request2">
-                <button class="accept"><img src="./icons/accept-circle.png" alt="Accept" /></button>
-                <button class="close"><img src="./icons/close-circle.png" alt="Close" /></button>
+                <button class="accept">
+                  <img src="./icons/accept-circle.png" alt="Accept" />
+                </button>
+                <button class="close">
+                  <img src="./icons/close-circle.png" alt="Close" />
+                </button>
               </div>
             </li>
             <li>
@@ -84,8 +89,12 @@
                 Alexis G
               </div>
               <div class="request2">
-                <button class="accept"><img src="./icons/accept-circle.png" alt="Accept" /></button>
-                <button class="close"><img src="./icons/close-circle.png" alt="Close" /></button>
+                <button class="accept">
+                  <img src="./icons/accept-circle.png" alt="Accept" />
+                </button>
+                <button class="close">
+                  <img src="./icons/close-circle.png" alt="Close" />
+                </button>
               </div>
             </li>
           </ul>
@@ -122,6 +131,26 @@
           <a href="#" id="linkMore">View More</a>
         </div>
       </aside>
+    </div>
+
+    <div id="padreModal">
+      <div id="modal">
+        <div id="encabezado">
+          <button id="cerrarModal">X</button>
+          <h2>Actualizar Perfil</h2>
+        </div>
+        <form id="form" onsubmit="submitNew(event)">
+          <label for="newName">Nombre: </label>
+          <input type="text" id="newName" name="newName" />
+
+          <label for="newCity">Ciudad: </label>
+          <input type="text" id="newCity" name="newCity" />
+
+          <div id="submitDiv">
+            <button type="submit" id="btnSubmit">Actualizar</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="main.js"></script>

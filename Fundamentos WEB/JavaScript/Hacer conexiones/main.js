@@ -4,6 +4,12 @@ const NUMREQ = document.getElementById("numReq");
 const NUMCON = document.getElementById("numCon");
 const EDITPROFILE = document.getElementById("profile");
 const NAME = document.getElementById('name');
+const PADREMODAL = document.getElementById('padreModal');
+const INPUTNAME = document.getElementById('newName');
+const INPUTCITY = document.getElementById('newCity');
+const BTNSUBMIT = document.getElementById('btnSubmit');
+const CITY = document.getElementById('city');
+const CERRARMODAL = document.getElementById('cerrarModal');
 
 const aceptar = (e) => {
   NUMREQ.innerText = Number(NUMREQ.innerText) - 1;
@@ -27,7 +33,9 @@ const cerrar = (e) => {
 };
 
 const editProfile = () => {
-    NAME.innerText = 'Willian Gomez';
+  PADREMODAL.style.display = 'flex';
+  INPUTNAME.value = NAME.textContent;
+  INPUTCITY.value = CITY.textContent;
 }
 
 for (let i = 0; i < ACCEPT.length; i++) {
@@ -38,4 +46,16 @@ for (let i = 0; i < CLOSE.length; i++) {
   CLOSE[i].addEventListener("click", cerrar);
 }
 
-EDITPROFILE.addEventListener('click', editProfile)
+const submitNew = (e) => {
+  e.preventDefault();
+  NAME.innerText = INPUTNAME.value;
+  CITY.innerText = INPUTCITY.value;
+  PADREMODAL.style.display = 'none';
+}
+
+const cerrarModal = () => {
+  PADREMODAL.style.display = 'none';
+}
+
+EDITPROFILE.addEventListener('click', editProfile);
+CERRARMODAL.addEventListener('click', cerrarModal)
