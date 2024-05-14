@@ -19,29 +19,7 @@ const Form = () => {
 
   const verificar = (form) => {
     const errors = {};
-    // const input = {
-    //     nombre: event.target.id,
-    //     value: event.target.value
-    // };
-    // if(input.nombre == 'nombre') input.length = 3;
-    // if(input.nombre == 'apellido') input.length = 3;
-    // if(input.nombre == 'email') input.length = 5;
-    // if(input.nombre == 'pass') input.length = 8;
-    // if(input.nombre == 'confirmPass') input.length = 8;
-    // const inputs = [];
-    // for(let key in form){
-    //     inputs.push(key);
-    // }
-    // if(!(inputs.includes(input.nombre) && form[input.nombre].length < input.length)){
-    //     if(input.nombre == 'confirmPass' && input.value != input.){
-    //     }else{
-    //         const err = document.getElementById(`err${input.nombre}`);
-    //     err.classList.add('formErr');
-    //     }
-    // }else{
-    //     const err = document.getElementById(`err${input.nombre}`);
-    //     err.classList.remove('formErr');
-    // }
+
     if(form.nombre.length < 3) errors.nombre = 'Debe tener mas de 3 caracteres';
     else errors.nombre = 'Correcto';
     if(form.apellido.length < 3) errors.apellido = 'Debe tener mas de 3 caracteres';
@@ -53,6 +31,7 @@ const Form = () => {
     if(!form.confirmPass.length) errors.confirmPass = '';
     else if(form.confirmPass != form.pass) errors.confirmPass = 'No coincide';
     else errors.confirmPass = 'Correcto';
+    
     return errors;
   };
 
