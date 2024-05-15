@@ -5,7 +5,7 @@ const Lista = (props) => {
     <div className="lista">
       {props.listaTareas.length
         ? props.listaTareas.map((tarea, index) => {
-            return <Tarea tarea={tarea} id={index} deleteTarea={props.deleteTarea} />;
+            return <Tarea tarea={tarea.tarea} id={index} deleteTarea={props.deleteTarea} marcar={props.marcar} estado={tarea.estado} />;
           })
         : null}
     </div>
