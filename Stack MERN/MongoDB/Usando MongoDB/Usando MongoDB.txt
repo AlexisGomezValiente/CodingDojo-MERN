@@ -1,0 +1,551 @@
+Microsoft Windows [Versión 10.0.22631.3593]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Windows\System32>mongo
+"mongo" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+
+C:\Windows\System32>mongosh
+Current Mongosh Log ID: 6659b5427777c82042cdcdf5
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6
+Using MongoDB:          7.0.11
+Using Mongosh:          2.2.6
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2024-05-29T09:15:40.623-04:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use myFirstDB
+switched to db myFirstDB
+myFirstDB> db.createCollection("estudiantes")
+{ ok: 1 }
+myFirstDB> db.estudiantes.insertOne({name:"Alexis", home_stats:"Paraguay", lucky_number:10, bdy:{month:6, day: 20, year:2003}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6659b5dc7777c82042cdcdf6')
+}
+myFirstDB> db.estudiantes.insertOne({name:"Alexis", home_stats:"Paraguay", lucky_number:10, bdy:{month:6, day: 20, year:2003}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6659b5dd7777c82042cdcdf7')
+}
+myFirstDB> db.estudiantes.insertOne({name:"Alexis", home_stats:"Paraguay", lucky_number:10, bdy:{month:6, day: 20, year:2003}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6659b5de7777c82042cdcdf8')
+}
+myFirstDB> db.estudiantes.insertOne({name:"Alexis", home_stats:"Paraguay", lucky_number:10, bdy:{month:6, day: 20, year:2003}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6659b5df7777c82042cdcdf9')
+}
+myFirstDB> db.estudiantes.insertOne({name:"Alexis", home_stats:"Paraguay", lucky_number:10, bdy:{month:6, day: 20, year:2003}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6659b5df7777c82042cdcdfa')
+}
+myFirstDB> db.estudiantes.find().pretty()
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.find({name:"Alexis"})
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.find({lucky_number:{$gt:10}})
+
+myFirstDB> db.estudiantes.find({lucky_number:{$gt:0}})
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.find({lucky_number:{$it:11}})
+MongoServerError[BadValue]: unknown operator: $it
+myFirstDB> db.estudiantes.find({lucky_number:{$lt:11}})
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.find({lucky_number:{$lt:10}})
+
+myFirstDB> db.estudiantes.find({lucky_number:{$lte:10}})
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.find({lucky_number:{$lte:9}})
+
+myFirstDB> db.estudiantes.find({lucky_number:{$gte:1,$lte:9}})
+
+myFirstDB> db.estudiantes.find({lucky_number:{$gte:1,$lte:10}})
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.find({lucky_number:{$gte:1,$lte:10}})
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.update({},{$set:{intereses:["codear", "futbol"]}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+myFirstDB> db.estudiantes.find()
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 },
+    intereses: [ 'codear', 'futbol' ]
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.updateMany({},{$set:{intereses:["codear", "futbol"]}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+myFirstDB> db.estudiantes.find()
+[
+  {
+    _id: ObjectId('6659b5dc7777c82042cdcdf6'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 },
+    intereses: [ 'codear', 'futbol' ]
+  },
+  {
+    _id: ObjectId('6659b5dd7777c82042cdcdf7'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 },
+    intereses: [ 'codear', 'futbol' ]
+  },
+  {
+    _id: ObjectId('6659b5de7777c82042cdcdf8'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 },
+    intereses: [ 'codear', 'futbol' ]
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdf9'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 },
+    intereses: [ 'codear', 'futbol' ]
+  },
+  {
+    _id: ObjectId('6659b5df7777c82042cdcdfa'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 },
+    intereses: [ 'codear', 'futbol' ]
+  }
+]
+myFirstDB> db.estudiantes.deleteMany({name:"Alexis"})
+{ acknowledged: true, deletedCount: 5 }
+myFirstDB> db.estudiantes.find()
+
+myFirstDB> db.estudiantes.insertOne({name:"Alexis", home_stats:"Paraguay", lucky_number:10, bdy:{month:6, day: 20, year:2003}})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6659b8ec7777c82042cdcdfb')
+}
+myFirstDB> db.estudiantes.find()
+[
+  {
+    _id: ObjectId('6659b8ec7777c82042cdcdfb'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 10,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.updateOne({},{$set:{lucky_number: lucky_number+1}})
+ReferenceError: lucky_number is not defined
+myFirstDB> db.estudiantes.updateOne({},{$inc:{lucky_number: 1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+myFirstDB> db.estudiantes.find()
+[
+  {
+    _id: ObjectId('6659b8ec7777c82042cdcdfb'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    lucky_number: 11,
+    bdy: { month: 6, day: 20, year: 2003 }
+  }
+]
+myFirstDB> db.estudiantes.update({},{$set:{lycky_number:number}})
+ReferenceError: number is not defined
+myFirstDB> db.estudiantes.update({},{$rename:{lucky_number:"hola"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+myFirstDB> db.estudiantes.find()
+[
+  {
+    _id: ObjectId('6659b8ec7777c82042cdcdfb'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    bdy: { month: 6, day: 20, year: 2003 },
+    hola: 11
+  }
+]
+myFirstDB> db.estudiantes.insertMany({updated:new Date()})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+myFirstDB> db.estudiantes.insertMany({updated:new Date})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+myFirstDB> db.estudiantes.insertMany({updated:new Date})
+myFirstDB> db.estudiantes.insertMany([{updated:new Date()}])
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6659ba347777c82042cdcdfc') }
+}
+myFirstDB> db.estudiantes.find()
+[
+  {
+    _id: ObjectId('6659b8ec7777c82042cdcdfb'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    bdy: { month: 6, day: 20, year: 2003 },
+    hola: 11
+  },
+  {
+    _id: ObjectId('6659ba347777c82042cdcdfc'),
+    updated: ISODate('2024-05-31T11:53:24.755Z')
+  }
+]
+myFirstDB> db.estudiantes.update({},[{$set:{updated: new Date()}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:53)
+
+> 1 | db.estudiantes.update({},[{$set:{updated: new Date()}])
+    |                                                      ^
+  2 |
+
+myFirstDB> db.estudiantes.update({},{$set:{updated: new Date()})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:52)
+
+> 1 | db.estudiantes.update({},{$set:{updated: new Date()})
+    |                                                     ^
+  2 |
+
+myFirstDB> db.estudiantes.update({},{$set:{updated: new Date()}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+myFirstDB> db.estudiantes.find()
+[
+  {
+    _id: ObjectId('6659b8ec7777c82042cdcdfb'),
+    name: 'Alexis',
+    home_stats: 'Paraguay',
+    bdy: { month: 6, day: 20, year: 2003 },
+    hola: 11,
+    updated: ISODate('2024-05-31T11:54:34.229Z')
+  },
+  {
+    _id: ObjectId('6659ba347777c82042cdcdfc'),
+    updated: ISODate('2024-05-31T11:53:24.755Z')
+  }
+]
+myFirstDB>
