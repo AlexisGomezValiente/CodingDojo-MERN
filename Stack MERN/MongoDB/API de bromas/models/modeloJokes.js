@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 const ColectionJokes = mongoose.Schema({
   setup: {
     type: String,
+    required: true
   },
   punchline: {
     type: String,
+    required: true
   },
 });
 
