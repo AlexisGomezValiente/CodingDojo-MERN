@@ -1,10 +1,10 @@
 import { useState } from "react";
-import style from './FormProduct.module.css';
+import style from "./FormProduct.module.css";
 
 const FormProduct = () => {
   const [form, setForm] = useState({
     title: "",
-    price: 0,
+    price: null,
     description: "",
   });
 
@@ -15,28 +15,52 @@ const FormProduct = () => {
     setForm({ ...form, [id]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch("/api/producto/agregar", {
+    const respuesta = await fetch("/api/producto/agregar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(form),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        alert("Producto agregado con exito");
-      });
+    });
+    if (respuesta.ok) {
+      alert("Producto agregado");
+    } else {
+      const resJson = await respuesta.json();
+      alert(resJson.message);
+    }
   };
 
   return (
-    <form onChange={handleChange} onSubmit={handleSubmit} className={style.form}>
-      <input type="text" placeholder="Title" id="title" className={style.input} />
-      <input type="text" placeholder="Price" id="price" className={style.input} />
-      <input type="text" placeholder="Description" id="description" className={style.input} />
-      <button type="submit" className={style.btn}>Create</button>
+    <form
+      onChange={handleChange}
+      onSubmit={handleSubmit}
+      className={style.form}
+      id="form"
+    >
+      <input
+        type="text"
+        placeholder="Title"
+        id="title"
+        className={style.input}
+      />
+      <input
+        type="text"
+        placeholder="Price"
+        id="price"
+        className={style.input}
+      />
+      <input
+        type="text"
+        placeholder="Description"
+        id="description"
+        className={style.input}
+      />
+      <button type="submit" className={style.btn}>
+        Create
+      </button>
     </form>
   );
 };
