@@ -44,7 +44,9 @@ const actualizarProducto = (req, res) => {
 const eliminarProducto = async (req, res) => {
   const { title } = req.params;
 
-  Producto.deleteOne({ title }).then(() => res.status(200).end());
+  Producto.deleteOne({ title })
+    .then(() => res.status(200).end())
+    .catch((err) => res.status(500).json(err));
 };
 
 module.exports = {
