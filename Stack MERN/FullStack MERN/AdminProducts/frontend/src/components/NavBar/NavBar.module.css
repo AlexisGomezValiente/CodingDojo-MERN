@@ -1,0 +1,33 @@
+.container{
+    background-color: blue;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.link{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    margin: 0 20px;
+    background-color: rgb(25, 25, 164);
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.link:hover{
+    background-color: rgb(19, 19, 111);
+}
+
+.title{
+    background-color: black;
+}
+
+.title:hover{
+    background-color: rgb(0, 0, 0);
+    cursor: default;
+}

@@ -17,51 +17,69 @@ const VerProducto = () => {
       });
   }, []);
 
-  const handleSubmit = async (e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const productoActualizado = await fetch(`/api/productos/actualizar/${params.title}`, {
-      method: 'PUT',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(producto)
-    });
+    const productoActualizado = await fetch(
+      `/api/productos/actualizar/${params.title}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(producto),
+      }
+    );
 
-    if(productoActualizado.ok){
+    if (productoActualizado.ok) {
       const product = await productoActualizado.json();
       alert(`Se han modificado ${product.modifiedCount} registros`);
-      navigate('/');
-    }else{
+      navigate("/");
+    } else {
       const product = await productoActualizado.json();
-      alert(product.message)
+      alert(product.message);
     }
-  }
+  };
 
-  const handleChange = (e)=>{
+  const handleChange = (e) => {
     const id = e.target.id;
     const value = e.target.value;
 
     setProducto({ ...producto, [id]: value });
-  }
-  
-  const deleteProduct = async (e,title) =>{
+  };
+
+  const deleteProduct = async (e, title) => {
     e.preventDefault();
-    const respuesta = await fetch(`${URL}/productos/eliminar/${title}`,{method:'DELETE'});
-    if(respuesta.ok){
-      alert('Se elimino correctamete');
-      navigate('/')
-    }else{
-      alert('No se ha podido eliminar')
+    const respuesta = await fetch(`${URL}/productos/eliminar/${title}`, {
+      method: "DELETE",
+    });
+    if (respuesta.ok) {
+      alert("Se elimino correctamete");
+      navigate("/");
+    } else {
+      alert("No se ha podido eliminar");
     }
-  }
+  };
 
   return (
-    <form className={style.form}onChange={handleChange} onSubmit={handleSubmit}>
-      <input type="text" id="title" value={producto.title} />
-      <input type="text" id="price" value={producto.price} />
-      <input type="text" id="description" value={producto.description} />
-      <button className={style.btn}>Actualizar</button>
-      <button className={style.delete} onClick={(e)=>{deleteProduct(e,params.title)}}>Eliminar Producto</button>
-    </form>
+    <div className={style.container}>
+      <form
+        className={style.form}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      >
+        <input type="text" id="title" value={producto.title} />
+        <input type="text" id="price" value={producto.price} />
+        <input type="text" id="description" value={producto.description} />
+        <button className={style.btn}>Actualizar</button>
+        <button
+          className={style.delete}
+          onClick={(e) => {
+            deleteProduct(e, params.title);
+          }}
+        >
+          Eliminar Producto
+        </button>
+      </form>
+    </div>
   );
 };
 
