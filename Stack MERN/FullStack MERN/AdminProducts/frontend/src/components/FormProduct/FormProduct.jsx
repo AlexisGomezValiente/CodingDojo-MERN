@@ -1,7 +1,7 @@
 import { useState } from "react";
 import style from "./FormProduct.module.css";
 
-const FormProduct = () => {
+const FormProduct = (props) => {
   const [form, setForm] = useState({
     title: "",
     price: null,
@@ -27,6 +27,8 @@ const FormProduct = () => {
     });
     if (respuesta.ok) {
       alert("Producto agregado");
+      const res = await respuesta.json();
+      props.addProduct(res);
     } else {
       const resJson = await respuesta.json();
       alert(resJson.message);

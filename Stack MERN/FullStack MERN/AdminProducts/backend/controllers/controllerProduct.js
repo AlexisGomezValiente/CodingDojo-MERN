@@ -28,8 +28,29 @@ const verUnProducto = async (req, res) => {
   return res.status(200).json(producto);
 };
 
+const actualizarProducto = (req, res) => {
+  const { title } = req.params;
+  const productosActualizado = req.body;
+
+  if (req.body.title && req.body.description && req.body.price) {
+    Producto.updateOne({ title }, productosActualizado, { new: true })
+      .then((productoActualizado) => res.status(200).json(productoActualizado))
+      .catch((err) => res.status(406).json(err));
+  } else {
+    return res.status(406).json({ message: "Debe completar los campos" });
+  }
+};
+
+const eliminarProducto = async (req, res) => {
+  const { title } = req.params;
+
+  Producto.deleteOne({ title }).then(() => res.status(200).end());
+};
+
 module.exports = {
   addProduct,
   verProductos,
-  verUnProducto
+  verUnProducto,
+  actualizarProducto,
+  eliminarProducto,
 };

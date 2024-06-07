@@ -1,29 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import style from "./Productos.module.css";
 
-const Productos = () => {
-  const [productos, setProductos] = useState([]);
-
-  const pedirProductos = () => {
-    fetch("/api/productos")
-      .then((res) => res.json())
-      .then((res) => {
-        setProductos(res);
-      });
-  };
-
-  useEffect(() => {
-    pedirProductos();
-  }, []);
-
+const Productos = ({productos}) => {
   return (
-    <div>
-      <h2>All Products</h2>
+    <div className={style.container}>
       {productos.length
         ? productos.map((producto) => {
             return (
-              <Link to={`/${producto.title}`}>
-                <p>{producto.title}</p>
+              <Link to={`/${producto.title}`} className={style.link}>
+                <p className={style.p}>{producto.title}</p>
               </Link>
             );
           })
