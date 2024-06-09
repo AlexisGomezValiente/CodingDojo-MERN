@@ -18,7 +18,7 @@ const FormProduct = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const respuesta = await fetch("/api/producto/agregar", {
+    const respuesta = await fetch("http://localhost:3001/api/producto/agregar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

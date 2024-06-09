@@ -10,7 +10,7 @@ const VerProducto = () => {
   const URL = "http://localhost:3001/api";
 
   useEffect(() => {
-    fetch(`/api/productos/${params.title}`)
+    fetch(`http://localhost:3001/api/productos/${params.title}`)
       .then((res) => res.json())
       .then((product) => {
         setProducto(product);
@@ -21,7 +21,7 @@ const VerProducto = () => {
     e.preventDefault();
 
     const productoActualizado = await fetch(
-      `/api/productos/actualizar/${params.title}`,
+      `http://localhost:3001/api/productos/actualizar/${params.title}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

@@ -1,0 +1,38 @@
+.form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 200px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(187, 187, 187);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.form input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.form button{
+    border: none;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.cancel{
+    background-color: red;
+}
+
+.enviar{
+    background-color: green;
+}
