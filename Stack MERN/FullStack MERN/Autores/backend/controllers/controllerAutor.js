@@ -18,7 +18,6 @@ const verAutores = (req, res) => {
 
 const eliminarAutor = (req, res) => {
   const { nombre } = req.params;
-  console.log(nombre)
 
   Autor.deleteOne({ nombre })
     .then(() => res.status(200).end())
