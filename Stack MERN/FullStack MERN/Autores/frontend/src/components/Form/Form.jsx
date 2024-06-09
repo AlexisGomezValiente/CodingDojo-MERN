@@ -11,7 +11,6 @@ const Form = (props) => {
 
   useEffect(() => {
     if (params.nombre) props.setForm({ ...params });
-    console.log(location);
     if (location.pathname.includes("agregar")) props.setForm({ nombre: "" });
   }, [location]);
 
