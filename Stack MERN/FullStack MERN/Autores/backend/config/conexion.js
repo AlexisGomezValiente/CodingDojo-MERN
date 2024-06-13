@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require('dotenv').config()
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/autores_db")
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Conexion exitosa");
   })
