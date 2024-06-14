@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const navigate = useNavigate();
   const [autores, setAutores] = useState([]);
-  const URL = "https://codingdojo-mern.onrender.com/api";
+  const URL = process.env.REACT_APP_API_URL;
 
   const pedirAutores = async () => {
     const respuesta = await fetch(`${URL}/autores`);
