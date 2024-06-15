@@ -1,0 +1,22 @@
+.table {
+  border-collapse: collapse;
+  margin: 20px;
+  width: 500px;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+  font-size: 20px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  text-align: center;
+}
