@@ -1,11 +1,11 @@
-import style from './Table.module.css';
+import style from "./Table.module.css";
 
 const Table = (props) => {
   return (
     <table className={style.table}>
       <thead>
         <tr>
-          <th>{props.titulo}</th>
+          <th style={{ backgroundColor: props.titleColor }}>{props.titulo}</th>
         </tr>
       </thead>
 
@@ -14,10 +14,11 @@ const Table = (props) => {
           return (
             <tr key={proyect._id}>
               <td>
-                <div>
+                <div className={style.proyecto} style={{ backgroundColor: `rgb(${props.fondoProyecto})` }}>
                   <h2>{proyect.nombre}</h2>
                   <p>{proyect.fecha}</p>
                   <button
+                    style={{ backgroundColor: props.colorButon }}
                     onClick={() => {
                       if (proyect.estado != "COMPLETO") {
                         props.cambiarEstado(proyect.nombre);

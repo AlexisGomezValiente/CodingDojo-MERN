@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import style from './FormLogin.module.css';
 
 const Login = (props) => {
   const navigate = useNavigate();
@@ -70,7 +71,7 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className={style.container}>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <h2>Register</h2>
         <input type="text" placeholder="Username" id="username" />

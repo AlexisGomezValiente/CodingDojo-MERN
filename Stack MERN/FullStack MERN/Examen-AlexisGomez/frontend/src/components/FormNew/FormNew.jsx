@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import style from "./FormNew.module.css";
 
 const FormNew = (props) => {
   const navigate = useNavigate();
@@ -44,15 +45,17 @@ const FormNew = (props) => {
   };
 
   return (
-    <div>
-      <Link to={"/menu"}>
-        <p>Volver al dashboard</p>
-      </Link>
-      <form onChange={handleChange} onSubmit={handleSubmit}>
-        <input type="text" id="nombre" placeholder="Nombre del proyecto" />
-        <input type="date" id="fecha" placeholder="Fecha de vencimiento" />
-        <button type="submit">Agregar</button>
-      </form>
+    <div className={style.container}>
+      <div>
+        <Link to={"/menu"} className={style.link}>
+          <p>Volver al dashboard</p>
+        </Link>
+        <form onChange={handleChange} onSubmit={handleSubmit}>
+          <input type="text" id="nombre" placeholder="Nombre del proyecto" />
+          <input type="date" id="fecha" placeholder="Fecha de vencimiento" />
+          <button type="submit">Agregar</button>
+        </form>
+      </div>
     </div>
   );
 };
