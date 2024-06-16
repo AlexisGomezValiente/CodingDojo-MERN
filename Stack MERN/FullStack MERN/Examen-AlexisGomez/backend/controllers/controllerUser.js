@@ -16,7 +16,6 @@ const agregarUser = (req, res) => {
 
 const login = (req, res) => {
   const { username, pass } = req.body;
-  console.log(username, pass);
 
   User.findOne({ username, pass })
     .then((userEncontrado) => {
